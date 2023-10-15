@@ -1,16 +1,19 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.plugin.serialization")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
     namespace = "dev.kevalkanapriya.umbrellaacademy"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "dev.kevalkanapriya.umbrellaacademy"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -66,4 +69,19 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+
+    implementation("com.google.dagger:hilt-android:2.48.1")
+    kapt("com.google.dagger:hilt-compiler:2.48.1")
+    // For instrumentation tests
+//    androidTestImplementation  'com.google.dagger:hilt-android-testing:2.48.1'
+//    kaptAndroidTest 'com.google.dagger:hilt-compiler:2.48.1'
+    // For local unit tests
+//    testImplementation 'com.google.dagger:hilt-android-testing:2.48.1'
+//    kaptTest 'com.google.dagger:hilt-compiler:2.48.1'
+}
+
+kapt {
+    correctErrorTypes = true
 }
