@@ -5,6 +5,8 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
+import android.os.Build
+import androidx.annotation.RequiresApi
 
 abstract class AndroidSensor(
     private val context: Context,
@@ -32,7 +34,7 @@ abstract class AndroidSensor(
         }
 
         sensor?.let {
-            sensorManager.registerListener(this, it, SensorManager.SENSOR_DELAY_NORMAL)
+            sensorManager.registerListener(this, it, 5000)
         }
     }
 

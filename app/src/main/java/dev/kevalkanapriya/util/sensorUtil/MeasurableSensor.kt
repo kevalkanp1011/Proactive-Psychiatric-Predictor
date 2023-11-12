@@ -1,5 +1,6 @@
 package dev.kevalkanapriya.util.sensorUtil
 
+
 abstract class MeasurableSensor(
     protected val sensorType: Int
 ) {
