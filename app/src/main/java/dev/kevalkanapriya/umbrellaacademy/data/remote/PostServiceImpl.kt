@@ -76,6 +76,5 @@ class PostServiceImpl(
         }
     }
 
-    /** Dependency Injection kullanmadığımız için constructor olarak verdiğimiz değerin bir instance'ını oluşturmamız gerekiyor.
-     * Bunu interface içerisinde yapabiliriz. */
+   
 }
